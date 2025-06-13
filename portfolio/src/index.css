@@ -1,0 +1,9 @@
+@tailwind base;
+@tail
+wind components;
+@tailwind utilities;
+
+/* Custom styles */
+.hero-background {
+  background: url('../public/images/background.jpg') no-repeat center center/cover;
+}
