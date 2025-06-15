@@ -29,7 +29,7 @@ export default function Contact() {
     <section id="contact" className="py-16 px-4 md:px-16 bg-gray-700 text-gray-50">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
-        <div onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-50">Name</label>
             <input
@@ -38,7 +38,7 @@ export default function Contact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="mt-1 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-950"
               required
             />
           </div>
@@ -50,7 +50,7 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="mt-1 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600  text-gray-950"
               required
             />
           </div>
@@ -62,14 +62,14 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className="mt-1 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="mt-1 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 text-gray-950"
               required
             />
           </div>
           <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg">
             Send Message
           </button>
-        </div>
+        </form>
       </div>
     </section>
   );
