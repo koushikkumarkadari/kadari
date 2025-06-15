@@ -7,23 +7,44 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, email, message } = formData;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  const { name, email, message } = formData;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      alert('Please fill out all fields.');
-      return;
-    }
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
+  if (!name.trim() || !email.trim() || !message.trim()) {
+    alert('Please fill out all fields.');
+    return;
+  }
 
-    alert('Form submitted successfully!');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  try {
+    const response = await fetch(`${import.meta.env.VITE_URL}/api/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message || 'Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      alert(data.error || 'Something went wrong while submitting the form.');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Server error. Please try again later.');
+  }
+};
+
 
   return (
     <section id="contact" className="py-16 px-4 md:px-16 bg-gray-700 text-gray-50">

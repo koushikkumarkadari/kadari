@@ -1,0 +1,22 @@
+{
+  "name": "contact-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend for handling contact messages",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "dev": "node src/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "author": "",
+  "license": "ISC"
+}
