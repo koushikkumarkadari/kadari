@@ -24,7 +24,7 @@ function Cube() {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center text-center text-white hero-background p-24">
+    <section id="hero" className="relative h-screen flex flex-col md:flex-row items-center justify-center text-center text-white hero-background p-24">
       <Canvas className="absolute inset-0 z-0" camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={1.0} />
         <Cube />
