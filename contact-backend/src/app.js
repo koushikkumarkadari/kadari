@@ -12,10 +12,9 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
       'http://localhost:5173',
-      'https://portfolio-sigma-beryl-93.vercel.app/',
-      'https://portfolio-koushikkadari-s-projects.vercel.app/',
-      'https://portfolio-git-main-koushikkadari-s-projects.vercel.app/'
-      
+      'https://portfolio-sigma-beryl-93.vercel.app',
+      'https://portfolio-koushikkadari-s-projects.vercel.app',
+      'https://portfolio-git-main-koushikkadari-s-projects.vercel.app'
     ]; 
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
