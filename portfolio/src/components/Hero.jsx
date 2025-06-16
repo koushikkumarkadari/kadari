@@ -16,8 +16,8 @@ function Cube() {
   }, []);
 
   return (
-    <Box args={[4, 4, 4]} ref={meshRef}>
-      <meshBasicMaterial color="green" wireframe />
+    <Box args={[3, 3, 3]} ref={meshRef}>
+      <meshBasicMaterial color="white" wireframe />
     </Box>
   );
 }
