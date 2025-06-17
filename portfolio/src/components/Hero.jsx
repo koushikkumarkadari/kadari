@@ -16,7 +16,7 @@ function Cube() {
   }, []);
 
   return (
-    <Box args={[3, 3, 3]} ref={meshRef}>
+    <Box args={[9, 9, 9]} ref={meshRef}>
       <meshBasicMaterial color="white" wireframe />
     </Box>
   );
@@ -24,7 +24,10 @@ function Cube() {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen flex flex-col md:flex-row items-center justify-center text-center text-white hero-background p-24">
+    <section id="hero" className="relative h-screen flex flex-col md:flex-row items-center justify-center text-center py-0 px-4 md:px-16 bg-gray-900 text-white bg-opacity-90  bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px)`,
+      }}>
       <Canvas className="absolute inset-0 z-0" camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={1.0} />
         <Cube />

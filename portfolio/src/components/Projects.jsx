@@ -21,7 +21,10 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-16 px-4 md:px-16 bg-gray-900">
+    <section id="projects" className="py-16 px-4 md:px-16 bg-gray-900 text-white bg-opacity-90  bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px)`,
+      }}>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-50">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
